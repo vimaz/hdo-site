@@ -85,6 +85,10 @@ gem 'dragonfly', '~> 0.9.12'
 # logging
 gem 'lograge'
 
+# email
+gem 'mail'
+gem 'valid_email'
+
 # serialization / parsing
 gem 'multi_json'
 gem 'yajl-ruby'
@@ -106,8 +110,8 @@ gem 'faraday'
 gem 'net-http-persistent'
 
 # data import
-gem 'hdo-storting-importer', "~> 0.3.2"
-# gem 'hdo-storting-importer', :path => File.expand_path("../../hdo-storting-importer", __FILE__)
+gem 'hdo-storting-importer', "~> 0.3.2", require: 'hdo/storting_importer'
+# gem 'hdo-storting-importer', path => File.expand_path("../../hdo-storting-importer", __FILE__), require: 'hdo/storting_importer'
 
 if Gem::Version.new(Bundler::VERSION) >= Gem::Version.new("1.2.0.rc2")
   ruby '1.9.3'

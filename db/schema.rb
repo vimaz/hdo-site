@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121125164942) do
+ActiveRecord::Schema.define(:version => 20121128011835) do
 
   create_table "categories", :force => true do |t|
     t.string   "external_id"
@@ -217,6 +217,14 @@ ActiveRecord::Schema.define(:version => 20121125164942) do
   end
 
   add_index "propositions", ["representative_id", "vote_id"], :name => "index_propositions_on_representative_id_and_vote_id"
+
+  create_table "questions", :force => true do |t|
+    t.string   "title",      :null => false
+    t.text     "body",       :null => false
+    t.string   "sender"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "representatives", :force => true do |t|
     t.string   "external_id"
